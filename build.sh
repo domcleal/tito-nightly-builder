@@ -3,7 +3,7 @@
 ssh -o "BatchMode yes" people.redhat.com "rm public_html/copr/tito-nightly/*" || true
 
 if [ -e tito ]; then
-    (cd tito && git pull)
+    (cd tito && git checkout rel-eng/releasers.conf && git pull)
 else
     git clone https://github.com/dgoodwin/tito
 fi
